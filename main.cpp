@@ -2,9 +2,11 @@
 #include "ranum.hpp"
 
 using namespace std;
+using namespace adl;
 
 int main() {
-    adl::ranum &test = adl::ranum::get();
-    cout<<test.generate(1, 3)<<endl;
+    ranum &test = ranum::get(), &test2 = ranum::get();
+    cout<<test.generate(1, 5)<<endl;
+    cout<<test2.generate(5, 10)<<endl;
     return 0;
 }
