@@ -2,30 +2,24 @@
 #define _RANUM_
 
 #include <cstdlib>
-#include <ctime>
 
 namespace adl {
-//
+//***
     class ranum {
-        ranum() { srand(time(0)); }
-        ranum(const ranum& rhs);
-        void operator=(const ranum& rhs);
+        ranum() { srand(time(0)); } //private constructor, only used inside ::get()
+        ranum(const ranum& rhs); //disable copy constructor
+        void operator=(const ranum& rhs); //disable assignment
     public:
-        static ranum& get();
-        //static ranum& operator()();
-        int generate(const int& min, const int& max);
+        static ranum& get(); //get a reference-handle
+        int generate(const int& min, const int& max); //return random number between min and max
     };
-//
+//***
 }
 
 inline adl::ranum& adl::ranum::get() {
-    static ranum snglton;
-    return snglton;
+    static ranum sngl;
+    return sngl;
 }
-
-/*inline adl::ranum& adl::ranum::operator()() {
-    get();
-}*/
 
 inline int adl::ranum::generate(const int& min, const int& max) {
     return rand()%(max-min+1) + min;
