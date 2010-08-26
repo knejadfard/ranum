@@ -2,7 +2,6 @@
 #include "ranum.hpp"
 
 using namespace std;
-using namespace adl;
 
 int main() {
     ranum &test = ranum::get(), &test2 = ranum::get();
