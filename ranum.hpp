@@ -2,6 +2,7 @@
 #define _RANUM_
 
 #include <cstdlib>
+#include <ctime>
 
 namespace adl {
 //***
