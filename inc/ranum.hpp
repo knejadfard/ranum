@@ -8,20 +8,20 @@ class ranum {
     ranum() {
         srand(time(0));    //private constructor, only used inside ::get()
     }
-    ranum(const ranum& rhs); //disable copy constructor
-    void operator=(const ranum& rhs); //disable assignment
+    ranum(const ranum& rhs){} //disable copy constructor
+    ranum& operator=(const ranum& rhs){} //disable assignment
 public:
-    static ranum& get(); //get a reference-handle
+    static ranum& object(); //get a reference to the static ranum object
     int generate(const int& min, const int& max); //return random number between min and max
 };
 
-inline ranum& ranum::get() {
+/*inline ranum& ranum::object() {
     static ranum sngl; //make it a singleton
     return sngl;
 }
 
 inline int ranum::generate(const int& min, const int& max) {
     return rand()%(max-min+1) + min;
-}
+}*/
 
 #endif
